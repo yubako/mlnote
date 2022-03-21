@@ -1,19 +1,14 @@
-.. mlnote documentation master file, created by
-   sphinx-quickstart on Mon Mar 21 12:53:16 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Welcome to mlnote's documentation!
+Home
 ==================================
 
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+
+kaggle/index.md
+data/index.md
+preprocess/index.md
+models/index.md
+training/index.md
 ```
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
