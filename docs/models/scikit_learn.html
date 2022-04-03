@@ -132,7 +132,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -155,9 +155,13 @@
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../kaggle/index.html">Kaggle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/data.html">Data操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/plot.html">Plot</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../preprocess/index.html">Preprocessing</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">model</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">model</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Scikit Learn Models</a></li>
 </ul>
 </li>
@@ -188,7 +192,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -196,9 +200,8 @@
         <article role="main">
           <section id="scikit-learn-models">
 <h1>Scikit Learn Models<a class="headerlink" href="#scikit-learn-models" title="このヘッドラインへのパーマリンク">#</a></h1>
-<ul class="simple">
-<li><p>決定木モデル</p></li>
-</ul>
+<section id="id1">
+<h2>決定木モデル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">#</a></h2>
 <p>決定木モデルは特徴量の重要度を得られる</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rf</span><span class="o">.</span><span class="n">feature_importances_</span>
 </pre></div>
@@ -242,6 +245,18 @@
 <span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="svm">
+<h2>SVM (サポートベクタマシン)<a class="headerlink" href="#svm" title="このヘッドラインへのパーマリンク">#</a></h2>
+<p>個々のデータポイントが２つのクラスの決定協会を表現するのにどの程度重要かを学習する。</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html</a></p>
+<p>SVMで調整する主なパラメータ</p>
+<ul class="simple">
+<li><p>gamma :  ガウシアンカーネルの幅</p></li>
+<li><p>C : 正則化パラメータ</p></li>
+</ul>
+<p>SVMはパラメータとデータのスケールに敏感であるため、すべての特徴量はだいたい同じスケールにしておく必要がある。</p>
+</section>
 </section>
 
         </article>
@@ -289,8 +304,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            コンテンツ
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Scikit Learn Models</a><ul>
+<li><a class="reference internal" href="#id1">決定木モデル</a></li>
+<li><a class="reference internal" href="#svm">SVM (サポートベクタマシン)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -1,6 +1,6 @@
 # Scikit Learn Models
 
-* 決定木モデル
+## 決定木モデル
 
 決定木モデルは特徴量の重要度を得られる
 ```
@@ -50,3 +50,18 @@ gs = GridSearchCV(estimator=GradientBoostingClassifier(),
                   scoring="accuracy", cv=10, refit=True, n_jobs=-1)
 gs.fit(train_x, train_y)
 ```
+
+
+## SVM (サポートベクタマシン)
+
+個々のデータポイントが２つのクラスの決定協会を表現するのにどの程度重要かを学習する。
+
+[https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
+
+SVMで調整する主なパラメータ
+
+  * gamma :  ガウシアンカーネルの幅
+  * C : 正則化パラメータ
+
+SVMはパラメータとデータのスケールに敏感であるため、すべての特徴量はだいたい同じスケールにしておく必要がある。
+

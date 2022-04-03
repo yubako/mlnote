@@ -5,4 +5,7 @@
 :caption: Contents
 
 scikit_learn.md
+tensorflow.md
+bert.md
+
 ```

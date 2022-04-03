@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Preprocessing" href="../preprocess/index.html" /><link rel="prev" title="Kaggle" href="../kaggle/index.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Data操作" href="data.html" /><link rel="prev" title="Kaggle" href="../kaggle/index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Data - mlnote 0 ドキュメント</title>
@@ -132,7 +132,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -155,10 +155,18 @@
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../kaggle/index.html">Kaggle</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Data</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html">Data操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tfds_dataset.html">Tensorflow dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">Numpy</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../preprocess/index.html">Preprocessing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../models/scikit_learn.html">Scikit Learn Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tensorflow.html">Tensorflow model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/bert.html">BERT Model</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../training/index.html">Training</a></li>
@@ -188,7 +196,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -196,90 +204,15 @@
         <article role="main">
           <section id="data">
 <h1>Data<a class="headerlink" href="#data" title="このヘッドラインへのパーマリンク">#</a></h1>
-<section id="csv">
-<h2>CSVファイルの読み込み<a class="headerlink" href="#csv" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"/kaggle/input/titanic/train.csv"</span><span class="p">)</span>
-</pre></div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfds_dataset.html">Tensorflow dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Numpy</a></li>
+</ul>
 </div>
-</section>
-<section id="dataframe">
-<h2>DataFrameの概要を表示する<a class="headerlink" href="#dataframe" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>train.info()
-
-&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    int64  
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.7+ KB
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h2>全体統計情報を取得する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">full</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="n">full</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="s2">"O"</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id2">
-<h2>DataFrameの連結<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">#</a></h2>
-<p>テストデータと訓練データを結合して全体の統計を見たいときなど</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">full</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id3">
-<h2>欠損値の確認方法<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
-<span class="n">train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-<section id="id4">
-<h3>欠損値を削除する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">#</a></h3>
-<p>行全体を削除する場合</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">dropa</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>欠損値を含む列を削除する</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">dropa</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id5">
-<h3>欠損値を補完する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">#</a></h3>
-<p>sklearnのSimpleImputeを使用する</p>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html">https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html</a></p>
-</section>
-</section>
-<section id="id6">
-<h2>データのプロファイリングを表示する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas_profiling</span> <span class="k">as</span> <span class="nn">pdp</span>
-<span class="n">pdp</span><span class="o">.</span><span class="n">ProfileReport</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="id7">
-<h2>列の削除<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">"Survived"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Survived"</span><span class="p">]</span>
-</pre></div>
-</div>
-</section>
 </section>
 
         </article>
@@ -287,12 +220,12 @@ memory usage: 83.7+ KB
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../preprocess/index.html">
+          <a class="next-page" href="data.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Preprocessing</div>
+                <div class="title">Data操作</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -327,37 +260,8 @@ memory usage: 83.7+ KB
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            コンテンツ
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Data</a><ul>
-<li><a class="reference internal" href="#csv">CSVファイルの読み込み</a></li>
-<li><a class="reference internal" href="#dataframe">DataFrameの概要を表示する</a></li>
-<li><a class="reference internal" href="#id1">全体統計情報を取得する</a></li>
-<li><a class="reference internal" href="#id2">DataFrameの連結</a></li>
-<li><a class="reference internal" href="#id3">欠損値の確認方法</a><ul>
-<li><a class="reference internal" href="#id4">欠損値を削除する</a></li>
-<li><a class="reference internal" href="#id5">欠損値を補完する</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id6">データのプロファイリングを表示する</a></li>
-<li><a class="reference internal" href="#id7">列の削除</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
