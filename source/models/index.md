@@ -5,7 +5,8 @@
 :caption: Contents
 
 scikit_learn.md
-tensorflow.md
-bert.md
-
+tf/tensorflow.md
+tf/bert.md
+tf/autoencoder.md
+tf/gan.md
 ```

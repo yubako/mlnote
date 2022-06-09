@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Data" href="../data/index.html" /><link rel="prev" title="Home" href="../index.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Preprocessing" href="../preprocess/index.html" /><link rel="prev" title="Tensorflow dataset" href="tfds_dataset.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Kaggle - mlnote 0 ドキュメント</title>
+        <title>scikit-learn - mlnote 0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -154,13 +154,13 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kaggle</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../data/pandas.html">pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/numpy.html">Numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/plot.html">Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/tfds_dataset.html">Tensorflow dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/scikit_learn.html">Data操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kaggle/index.html">Kaggle</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tfds_dataset.html">Tensorflow dataset</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">scikit-learn</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../preprocess/index.html">Preprocessing</a></li>
@@ -213,11 +213,49 @@
           </label>
         </div>
         <article role="main">
-          <section id="kaggle">
-<h1>Kaggle<a class="headerlink" href="#kaggle" title="このヘッドラインへのパーマリンク">#</a></h1>
-<section id="kaggle-notebook">
-<h2>kaggle notebookで入力保管を有効にする方法<a class="headerlink" href="#kaggle-notebook" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">config</span> <span class="n">Completer</span><span class="o">.</span><span class="n">use_jedi</span> <span class="o">=</span> <span class="kc">False</span>
+          <section id="scikit-learn">
+<h1>scikit-learn<a class="headerlink" href="#scikit-learn" title="このヘッドラインへのパーマリンク">#</a></h1>
+<section id="id1">
+<h2>スケール操作<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">#</a></h2>
+<ul class="simple">
+<li><p>標準化 (StandardScaler)</p></li>
+</ul>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html</a></p>
+<p>平均が0, 分散が1 にする。すべての特徴量の大きさを抑えてくれるが、一定の範囲に収まることを保証するわけではない</p>
+<ul class="simple">
+<li><p>RobustScaler</p></li>
+</ul>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html</a></p>
+<p>個々の特徴量の大きさを抑えてくれるが、平均値と分散の代わりに中央値と四分位数(<em>)を用いる。<br/>
+(</em>) 四分位数について</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  中央値x -&gt; 集合の半分がxよりも大きく、もう半分がxより小さい
+  第一四分位数  -&gt; 全体の1/4がxより小さく、3/4がxよりも大きいような数
+  第三四分位数  -&gt; 全体の3/4がxより小さく、1/4がxよりも大きいような数
+</pre></div>
+</div>
+<p>RobustScalerは極端に他の値と異なるような値(ハズレ値)を無視する。</p>
+<ul class="simple">
+<li><p>MinMaxScaler</p></li>
+</ul>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html</a></p>
+<p>データがちょうど0〜1の間に入るように変換する</p>
+<ul class="simple">
+<li><p>Pandas DataFrameに対するスケール操作</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">imr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">imr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">imr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">std</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>訓練データと検証データ分割<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">train_x</span><span class="p">,</span> <span class="n">valid_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">valid_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -228,23 +266,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../data/index.html">
+          <a class="next-page" href="../preprocess/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Data</div>
+                <div class="title">Preprocessing</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../index.html">
+          <a class="prev-page" href="tfds_dataset.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Tensorflow dataset</div>
                 
               </div>
             </a>
@@ -280,8 +318,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Kaggle</a><ul>
-<li><a class="reference internal" href="#kaggle-notebook">kaggle notebookで入力保管を有効にする方法</a></li>
+<li><a class="reference internal" href="#">scikit-learn</a><ul>
+<li><a class="reference internal" href="#id1">スケール操作</a></li>
+<li><a class="reference internal" href="#id2">訓練データと検証データ分割</a></li>
 </ul>
 </li>
 </ul>

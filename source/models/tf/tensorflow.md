@@ -75,4 +75,8 @@ estimator.train(input_fn=input_fn, steps=1000)
 eval = estimator.evaluate(input_fn=input_fn, steps=10)
 ```
 
+## モデルのグラフ表示
 
+```
+tf.keras.utils.plot_model(model=model)
+```

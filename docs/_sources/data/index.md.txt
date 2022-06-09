@@ -4,8 +4,9 @@
 :maxdepth: 1
 :caption: Contents
 
-data.md
+pandas.md
+numpy.md
 plot.md
 tfds_dataset.md
-numpy.md
+scikit_learn.md
 ```

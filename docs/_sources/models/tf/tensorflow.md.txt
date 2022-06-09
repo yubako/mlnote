@@ -75,10 +75,8 @@ estimator.train(input_fn=input_fn, steps=1000)
 eval = estimator.evaluate(input_fn=input_fn, steps=10)
 ```
 
-```{toctree}
-:maxdepth: 1
-:caption: Contents
+## モデルのグラフ表示
 
-tf/autoencoder.md
-tf/gan.md
+```
+tf.keras.utils.plot_model(model=model)
 ```

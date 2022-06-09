@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Plot" href="plot.html" /><link rel="prev" title="Data" href="index.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Numpy" href="numpy.html" /><link rel="prev" title="Data" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Data操作 - mlnote 0 ドキュメント</title>
+        <title>pandas - mlnote 0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -156,17 +156,31 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../kaggle/index.html">Kaggle</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Data操作</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tfds_dataset.html">Tensorflow dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scikit_learn.html">Data操作</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../preprocess/index.html">Preprocessing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../models/scikit_learn.html">Scikit Learn Models</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../models/tensorflow.html">Tensorflow model</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html">オートエンコーダ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html">敵対的生成ネットワーク</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html#gan">深層畳み込みGAN</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../training/index.html">Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/bert.html">BERT Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../training/scikit_learn.html">scikit-learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../training/tensorflow.html">Tensorflow</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -199,8 +213,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="data">
-<h1>Data操作<a class="headerlink" href="#data" title="このヘッドラインへのパーマリンク">#</a></h1>
+          <section id="pandas">
+<h1>pandas<a class="headerlink" href="#pandas" title="このヘッドラインへのパーマリンク">#</a></h1>
 <section id="csv">
 <h2>CSVファイルの読み込み<a class="headerlink" href="#csv" title="このヘッドラインへのパーマリンク">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -285,50 +299,6 @@ memory usage: 83.7+ KB
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h2>スケール操作<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">#</a></h2>
-<ul class="simple">
-<li><p>標準化 (StandardScaler)</p></li>
-</ul>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html</a></p>
-<p>平均が0, 分散が1 にする。すべての特徴量の大きさを抑えてくれるが、一定の範囲に収まることを保証するわけではない</p>
-<ul class="simple">
-<li><p>RobustScaler</p></li>
-</ul>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html</a></p>
-<p>個々の特徴量の大きさを抑えてくれるが、平均値と分散の代わりに中央値と四分位数(<em>)を用いる。<br/>
-(</em>) 四分位数について</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  中央値x -&gt; 集合の半分がxよりも大きく、もう半分がxより小さい
-  第一四分位数  -&gt; 全体の1/4がxより小さく、3/4がxよりも大きいような数
-  第三四分位数  -&gt; 全体の3/4がxより小さく、1/4がxよりも大きいような数
-</pre></div>
-</div>
-<p>RobustScalerは極端に他の値と異なるような値(ハズレ値)を無視する。</p>
-<ul class="simple">
-<li><p>MinMaxScaler</p></li>
-</ul>
-<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html</a></p>
-<p>データがちょうど0〜1の間に入るように変換する</p>
-<ul class="simple">
-<li><p>Pandas DataFrameに対するスケール操作</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">imr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">imr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">imr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="n">std</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_valid</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-<section id="id9">
-<h2>訓練データと検証データ分割<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="n">train_x</span><span class="p">,</span> <span class="n">valid_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">valid_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
 </section>
 
         </article>
@@ -336,12 +306,12 @@ memory usage: 83.7+ KB
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="plot.html">
+          <a class="next-page" href="numpy.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Plot</div>
+                <div class="title">Numpy</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -388,7 +358,7 @@ memory usage: 83.7+ KB
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Data操作</a><ul>
+<li><a class="reference internal" href="#">pandas</a><ul>
 <li><a class="reference internal" href="#csv">CSVファイルの読み込み</a></li>
 <li><a class="reference internal" href="#dataframe">DataFrameの概要を表示する</a></li>
 <li><a class="reference internal" href="#id1">全体統計情報を取得する</a></li>
@@ -400,8 +370,6 @@ memory usage: 83.7+ KB
 </li>
 <li><a class="reference internal" href="#id6">データのプロファイリングを表示する</a></li>
 <li><a class="reference internal" href="#id7">列の削除</a></li>
-<li><a class="reference internal" href="#id8">スケール操作</a></li>
-<li><a class="reference internal" href="#id9">訓練データと検証データ分割</a></li>
 </ul>
 </li>
 </ul>

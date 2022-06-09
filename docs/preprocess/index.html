@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="model" href="../models/index.html" /><link rel="prev" title="Data" href="../data/index.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="model" href="../models/index.html" /><link rel="prev" title="Data操作" href="../data/scikit_learn.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>Preprocessing - mlnote 0 ドキュメント</title>
@@ -155,13 +155,32 @@
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../kaggle/index.html">Kaggle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data/index.html">Data</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Preprocessing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../models/scikit_learn.html">Scikit Learn Models</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/pandas.html">pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/numpy.html">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/plot.html">Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/tfds_dataset.html">Tensorflow dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/scikit_learn.html">Data操作</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../training/index.html">Training</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Preprocessing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../models/scikit_learn.html">Scikit Learn Models</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../models/tensorflow.html">Tensorflow model</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html">オートエンコーダ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html">敵対的生成ネットワーク</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html#gan">深層畳み込みGAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../models/bert.html">BERT Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../training/scikit_learn.html">scikit-learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../training/tensorflow.html">Tensorflow</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -231,6 +250,150 @@
 </div>
 </section>
 </section>
+<section id="layer">
+<h2>前処理Layerの作成<a class="headerlink" href="#layer" title="このヘッドラインへのパーマリンク">#</a></h2>
+<section id="id3">
+<h3>標準化を行う事前処理Layer<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="k">class</span> <span class="nc">Standarzation</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">adapt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_sample</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">means_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data_sample</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">stds_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data_sample</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">inputs</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stds_</span> <span class="o">+</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">epsilon</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>※ spsilonは0除算を避けるための小さな値</p>
+<p>事前にデータをいくつか与えて平均と標準偏差を求める必要がある</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">std_layer</span> <span class="o">=</span> <span class="n">Standarzation</span><span class="p">()</span>
+<span class="n">std_layer</span><span class="o">.</span><span class="n">adapt</span><span class="p">(</span><span class="n">data_sample</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">std_layer</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">"sigmoid"</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>ラベル特徴量を用いる場合<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">#</a></h3>
+<p>One Hot Encodingと埋め込み(Embedding)</p>
+<ul class="simple">
+<li><p>One Hot Encodingはカテゴリ種別ごとに列を追加して1 or 0で表現する</p></li>
+<li><p>埋め込みはカテゴリを固定次元のベクトルで表現する</p></li>
+</ul>
+<p>目安としてカテゴリ数が10個未満ならOne Hot Encodingがよさげ。50以上なら埋め込みのほうが良い。
+10〜50の間はどっちともいえないので、両方つかってみて性能のいい方を選ぶ</p>
+<p><strong>OneHotEncoding</strong></p>
+<p>カテゴリ値の辞書を作成する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;1h OCEAN"</span><span class="p">,</span> <span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"NEAR OCEAN"</span><span class="p">,</span> <span class="s2">"NEAR BAY"</span><span class="p">,</span> <span class="s2">"ISLAND"</span><span class="p">]</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="n">table_init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">KeyValueTensorInitializer</span><span class="p">(</span><span class="n">vocab</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+<span class="n">num_oov_buckets</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">StaticVocabularyTable</span><span class="p">(</span><span class="n">table_init</span><span class="p">,</span> <span class="n">num_oov_buckets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>oovはOut of Vocabularyの略。事前指定のカテゴリ外の値が入ったときにIDを割り振るためのバッファ<br/>
+以下のように使う</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"OTHERS"</span><span class="p">])</span>
+<span class="n">table</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="o">---</span>
+<span class="o">&lt;</span><span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int64</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>得られたindex値を用いてone hot encoding形式にする</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"OTHERS"</span><span class="p">])</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+<span class="n">onehot</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span> <span class="o">+</span> <span class="n">num_oov_buckets</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onehot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>これをlayerと実装する場合は以下のようにする。tensor内はすべてデータ型は同じでないといけないので、
+カテゴリデータと数値データはそれぞれ別のINPUTとして扱う</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OneHotEncode</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_oov_buckets</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num_oov_buckets</span> <span class="o">=</span> <span class="n">num_oov_buckets</span>
+
+  <span class="k">def</span> <span class="nf">adapt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_sample</span><span class="p">):</span>
+    <span class="n">cates</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data_sample</span><span class="p">)</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cates</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">table_init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">KeyValueTensorInitializer</span><span class="p">(</span><span class="n">cates</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">table_</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">StaticVocabularyTable</span><span class="p">(</span><span class="n">table_init</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_oov_buckets</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num_vocabs_</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cates</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_oov_buckets</span>
+  
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table_</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">onehot</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_vocabs_</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">onehot</span>
+
+<span class="n">sample_cate_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"&lt;1H OCEAN"</span><span class="p">,</span> <span class="s2">"NEAR OCEAN"</span><span class="p">,</span> <span class="s2">"NEAR BY"</span><span class="p">,</span> <span class="s2">"INLAND"</span><span class="p">])</span>
+<span class="n">sample_regular_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">9.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+
+<span class="c1"># Inputs</span>
+<span class="n">regular_inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">category_inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+
+<span class="c1"># One Hot Encoding</span>
+<span class="n">onehot_encoder</span> <span class="o">=</span> <span class="n">OneHotEncode</span><span class="p">()</span>
+<span class="n">onehot_encoder</span><span class="o">.</span><span class="n">adapt</span><span class="p">(</span><span class="n">sample_cate_data</span><span class="p">)</span>
+<span class="n">onehot</span> <span class="o">=</span> <span class="n">onehot_encoder</span><span class="p">(</span><span class="n">category_inputs</span><span class="p">)</span>
+
+<span class="c1"># 数値特徴量とOneHotEncoding済みの特徴量をつなげてmodelを作成する</span>
+<span class="n">encoded_inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">regular_inputs</span><span class="p">,</span> <span class="n">onehot</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">regular_inputs</span><span class="p">,</span> <span class="n">category_inputs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">encoded_inputs</span><span class="p">])</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">model</span><span class="p">((</span><span class="n">sample_regular_data</span><span class="p">,</span> <span class="n">sample_cate_data</span><span class="p">))</span>
+<span class="n">out</span>
+<span class="o">---</span>
+<span class="o">&lt;</span><span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.</span> <span class="p">,</span> <span class="mf">2.</span> <span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">2.</span> <span class="p">,</span> <span class="mf">2.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">3.</span> <span class="p">,</span> <span class="mf">2.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">1.</span> <span class="p">,</span> <span class="mf">3.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">],</span>
+       <span class="p">[</span><span class="mf">9.1</span><span class="p">,</span> <span class="mf">2.</span> <span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span> <span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Embedding</strong></p>
+<p>kerasにはEmbedding Layerがすでに存在するのでそれを使う</p>
+<p>※ Embedding層は訓練可能な変数をもつためモデルに組み込むと重みが更新される。これを抑止する場合は
+Model外の事前処理として埋め込みを行うか、trainableをFasleにする</p>
+<ul class="simple">
+<li><p>Indexを引くためにLookup Table作成するのはOne Hot Encodingと同じ</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vocab</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;1h OCEAN"</span><span class="p">,</span> <span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"NEAR OCEAN"</span><span class="p">,</span> <span class="s2">"NEAR BAY"</span><span class="p">,</span> <span class="s2">"ISLAND"</span><span class="p">]</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="n">table_init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">KeyValueTensorInitializer</span><span class="p">(</span><span class="n">vocab</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+<span class="n">num_oov_buckets</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">lookup</span><span class="o">.</span><span class="n">StaticVocabularyTable</span><span class="p">(</span><span class="n">table_init</span><span class="p">,</span> <span class="n">num_oov_buckets</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Embedding layerを作成する。output_dimは出力ベクトルの次元を指定する</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">embedding</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span> <span class="o">+</span> <span class="n">num_oov_buckets</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="n">embedding_dim</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>実行例</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cates</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="s2">"INLAND"</span><span class="p">,</span> <span class="s2">"NEAR BAY"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">cates</span><span class="p">)</span>
+<span class="n">embedding</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+<span class="o">---</span>
+<span class="o">&lt;</span><span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span>
+<span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.04014117</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04341874</span><span class="p">,</span>  <span class="mf">0.00825857</span><span class="p">,</span>  <span class="mf">0.01782556</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.00501693</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00398098</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02564949</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02547029</span><span class="p">]],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
         </article>
@@ -247,14 +410,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../data/index.html">
+          <a class="prev-page" href="../data/scikit_learn.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Data</div>
+                <div class="title">Data操作</div>
                 
               </div>
             </a>
@@ -294,6 +457,11 @@
 <li><a class="reference internal" href="#id1">クラスラベルのエンコーディング</a><ul>
 <li><a class="reference internal" href="#one-hot">One-Hot エンコーディング</a></li>
 <li><a class="reference internal" href="#id2">マッピング</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#layer">前処理Layerの作成</a><ul>
+<li><a class="reference internal" href="#id3">標準化を行う事前処理Layer</a></li>
+<li><a class="reference internal" href="#id4">ラベル特徴量を用いる場合</a></li>
 </ul>
 </li>
 </ul>
