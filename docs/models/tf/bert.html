@@ -2,14 +2,14 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="オートエンコーダ" href="autoencoder.html" /><link rel="prev" title="Tensorflow model" href="tensorflow.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
         <title>BERT Model - mlnote 0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -36,10 +36,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -153,7 +155,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../kaggle/index.html">Kaggle</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../data/pandas.html">pandas</a></li>
@@ -164,18 +166,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../preprocess/index.html">Preprocessing</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">model</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../scikit_learn.html">Scikit Learn Models</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../tensorflow.html">Tensorflow model</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="autoencoder.html">オートエンコーダ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gan.html">敵対的生成ネットワーク</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gan.html#gan">深層畳み込みGAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow model</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">BERT Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoencoder.html">オートエンコーダ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">敵対的生成ネットワーク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gan.html#gan">深層畳み込みGAN</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../training/scikit_learn.html">scikit-learn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../training/tensorflow.html">Tensorflow</a></li>
 </ul>
@@ -198,7 +199,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -213,39 +216,39 @@
         </div>
         <article role="main">
           <section id="bert-model">
-<h1>BERT Model<a class="headerlink" href="#bert-model" title="このヘッドラインへのパーマリンク">#</a></h1>
+<h1>BERT Model<a class="headerlink" href="#bert-model" title="この見出しへのパーマリンク">#</a></h1>
 <p>自然言語処理モデル</p>
 <section id="id1">
-<h2>インストール<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>インストール<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install transformers fugashi ipadic
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h2>前処理関連<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>前処理関連<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">#</a></h2>
 <section id="id">
-<h3>日本語のトークン, ID取得<a class="headerlink" href="#id" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>日本語のトークン, ID取得<a class="headerlink" href="#id" title="この見出しへのパーマリンク">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertJapaneseTokenizer</span>
 
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertJapaneseTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
 
-<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"本日は晴天なり"</span><span class="p">,</span> <span class="s2">"散歩すべし"</span><span class="p">]</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;本日は晴天なり&quot;</span><span class="p">,</span> <span class="s2">&quot;散歩すべし&quot;</span><span class="p">]</span>
 <span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span>
     <span class="n">texts</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
     <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-    <span class="n">padding</span><span class="o">=</span><span class="s2">"max_length"</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">'input_ids'</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;input_ids&#39;</span><span class="p">:</span>
     <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">28486</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4798</span><span class="p">,</span> <span class="mi">28849</span><span class="p">,</span> <span class="mi">297</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
      <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">19253</span><span class="p">,</span> <span class="mi">340</span><span class="p">,</span> <span class="mi">16513</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
-  <span class="s1">'token_type_ids'</span><span class="p">:</span>
+  <span class="s1">&#39;token_type_ids&#39;</span><span class="p">:</span>
     <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
      <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
-  <span class="s1">'attention_mask'</span><span class="p">:</span>
+  <span class="s1">&#39;attention_mask&#39;</span><span class="p">:</span>
     <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 <span class="p">}</span>
@@ -253,43 +256,43 @@
 </div>
 </section>
 <section id="id3">
-<h3>ID,トークンからもとの文章に変換<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">encoding</span><span class="p">[</span><span class="s1">'input_ids'</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<h3>ID,トークンからもとの文章に変換<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_string</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">'[CLS]'</span><span class="p">,</span> <span class="s1">'本'</span><span class="p">,</span> <span class="s1">'##日'</span><span class="p">,</span> <span class="s1">'は'</span><span class="p">,</span> <span class="s1">'晴'</span><span class="p">,</span> <span class="s1">'##天'</span><span class="p">,</span> <span class="s1">'なり'</span><span class="p">,</span> <span class="s1">'[SEP]'</span><span class="p">,</span> <span class="s1">'[PAD]'</span><span class="p">,</span> <span class="s1">'[PAD]'</span><span class="p">,</span> <span class="s1">'[PAD]'</span><span class="p">,</span> <span class="s1">'[PAD]'</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;[CLS]&#39;</span><span class="p">,</span> <span class="s1">&#39;本&#39;</span><span class="p">,</span> <span class="s1">&#39;##日&#39;</span><span class="p">,</span> <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;晴&#39;</span><span class="p">,</span> <span class="s1">&#39;##天&#39;</span><span class="p">,</span> <span class="s1">&#39;なり&#39;</span><span class="p">,</span> <span class="s1">&#39;[SEP]&#39;</span><span class="p">,</span> <span class="s1">&#39;[PAD]&#39;</span><span class="p">,</span> <span class="s1">&#39;[PAD]&#39;</span><span class="p">,</span> <span class="s1">&#39;[PAD]&#39;</span><span class="p">,</span> <span class="s1">&#39;[PAD]&#39;</span><span class="p">]</span>
 <span class="p">[</span><span class="n">CLS</span><span class="p">]</span> <span class="n">本日</span> <span class="n">は</span> <span class="n">晴天</span> <span class="n">なり</span> <span class="p">[</span><span class="n">SEP</span><span class="p">]</span> <span class="p">[</span><span class="n">PAD</span><span class="p">]</span> <span class="p">[</span><span class="n">PAD</span><span class="p">]</span> <span class="p">[</span><span class="n">PAD</span><span class="p">]</span> <span class="p">[</span><span class="n">PAD</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
-<h3>正規化<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>正規化<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">#</a></h3>
 <p>全角、半角を統一する (NFKCは正規化のモード)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unicodedata</span>
 
-<span class="n">normalize</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">"NFKC"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">normalize</span><span class="p">(</span><span class="s2">"A　B　C"</span><span class="p">)</span>
+<span class="n">normalize</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;NFKC&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">normalize</span><span class="p">(</span><span class="s2">&quot;A　B　C&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="bert">
-<h3>BERTによるベクトル化<a class="headerlink" href="#bert" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>BERTによるベクトル化<a class="headerlink" href="#bert" title="この見出しへのパーマリンク">#</a></h3>
 <p>Tensorflow用はTFBertModel, BertModelはpytorch用</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">TFBertModel</span>
 
-<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"本日は晴天なり"</span><span class="p">,</span> <span class="s2">"散歩すべし"</span><span class="p">]</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;本日は晴天なり&quot;</span><span class="p">,</span> <span class="s2">&quot;散歩すべし&quot;</span><span class="p">]</span>
 <span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span>
     <span class="n">texts</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> 
     <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-    <span class="n">padding</span><span class="o">=</span><span class="s2">"max_length"</span><span class="p">,</span>
-    <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"tf"</span>    <span class="c1"># Use tensorflow object</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span>
+    <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;tf&quot;</span>    <span class="c1"># Use tensorflow object</span>
 <span class="p">)</span>
 
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span>
 <span class="n">bert</span> <span class="o">=</span> <span class="n">TFBertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bert</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
 
@@ -298,29 +301,29 @@
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BertConfig</span> <span class="p">{</span>
-  <span class="s2">"_name_or_path"</span><span class="p">:</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span><span class="p">,</span>
-  <span class="s2">"architectures"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">"BertForMaskedLM"</span>
+  <span class="s2">&quot;_name_or_path&quot;</span><span class="p">:</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;architectures&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;BertForMaskedLM&quot;</span>
   <span class="p">],</span>
-  <span class="s2">"attention_probs_dropout_prob"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-  <span class="s2">"classifier_dropout"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">"hidden_act"</span><span class="p">:</span> <span class="s2">"gelu"</span><span class="p">,</span>
-  <span class="s2">"hidden_dropout_prob"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-  <span class="s2">"hidden_size"</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span>
-  <span class="s2">"initializer_range"</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
-  <span class="s2">"intermediate_size"</span><span class="p">:</span> <span class="mi">3072</span><span class="p">,</span>
-  <span class="s2">"layer_norm_eps"</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">,</span>
-  <span class="s2">"max_position_embeddings"</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
-  <span class="s2">"model_type"</span><span class="p">:</span> <span class="s2">"bert"</span><span class="p">,</span>
-  <span class="s2">"num_attention_heads"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-  <span class="s2">"num_hidden_layers"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-  <span class="s2">"pad_token_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="s2">"position_embedding_type"</span><span class="p">:</span> <span class="s2">"absolute"</span><span class="p">,</span>
-  <span class="s2">"tokenizer_class"</span><span class="p">:</span> <span class="s2">"BertJapaneseTokenizer"</span><span class="p">,</span>
-  <span class="s2">"transformers_version"</span><span class="p">:</span> <span class="s2">"4.17.0"</span><span class="p">,</span>
-  <span class="s2">"type_vocab_size"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="s2">"use_cache"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-  <span class="s2">"vocab_size"</span><span class="p">:</span> <span class="mi">32000</span>
+  <span class="s2">&quot;attention_probs_dropout_prob&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+  <span class="s2">&quot;classifier_dropout&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;hidden_act&quot;</span><span class="p">:</span> <span class="s2">&quot;gelu&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;hidden_dropout_prob&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+  <span class="s2">&quot;hidden_size&quot;</span><span class="p">:</span> <span class="mi">768</span><span class="p">,</span>
+  <span class="s2">&quot;initializer_range&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+  <span class="s2">&quot;intermediate_size&quot;</span><span class="p">:</span> <span class="mi">3072</span><span class="p">,</span>
+  <span class="s2">&quot;layer_norm_eps&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">,</span>
+  <span class="s2">&quot;max_position_embeddings&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+  <span class="s2">&quot;model_type&quot;</span><span class="p">:</span> <span class="s2">&quot;bert&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;num_attention_heads&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+  <span class="s2">&quot;num_hidden_layers&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+  <span class="s2">&quot;pad_token_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;position_embedding_type&quot;</span><span class="p">:</span> <span class="s2">&quot;absolute&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;tokenizer_class&quot;</span><span class="p">:</span> <span class="s2">&quot;BertJapaneseTokenizer&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;transformers_version&quot;</span><span class="p">:</span> <span class="s2">&quot;4.17.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type_vocab_size&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;use_cache&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;vocab_size&quot;</span><span class="p">:</span> <span class="mi">32000</span>
 <span class="p">}</span>
 
 <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>
@@ -328,19 +331,19 @@
 </div>
 </section>
 <section id="dataset">
-<h3>datasetの作成例<a class="headerlink" href="#dataset" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>datasetの作成例<a class="headerlink" href="#dataset" title="この見出しへのパーマリンク">#</a></h3>
 <p>datasetのmapはグラフモードで動作するので、通常の関数を実行する場合は<code class="docutils literal notranslate"><span class="pre">th.py_function</span></code>でwrapする</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">target</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">tf</span><span class="o">.</span><span class="n">is_tensor</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
-  <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">"max_length"</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"tf"</span><span class="p">)</span>
-  <span class="n">tokens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">tokens</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="s2">"token_type_ids"</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="s2">"attention_mask"</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+  <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;tf&quot;</span><span class="p">)</span>
+  <span class="n">tokens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">tokens</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">],</span> <span class="n">tokens</span><span class="p">[</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
   <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokens</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">tokens</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">make_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 
-  <span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s2">"text"</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">"target"</span><span class="p">]))</span>
+  <span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]))</span>
   <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">text</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">py_function</span><span class="p">(</span><span class="n">preprocess</span><span class="p">,</span> <span class="n">inp</span><span class="o">=</span><span class="p">[</span><span class="n">text</span><span class="p">,</span> <span class="n">target</span><span class="p">],</span> <span class="n">Tout</span><span class="o">=</span><span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">]))</span>
   <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
   <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -353,62 +356,62 @@
 </section>
 </section>
 <section id="id5">
-<h2>文章の穴埋め<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>文章の穴埋め<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">#</a></h2>
 <p>TFBertForMaskedLM</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import numpy as np
 from transformers import TFBertForMaskedLM, AutoTokenizer
 import tensorflow as tf
 
-model_name = "cl-tohoku/bert-base-japanese-whole-word-masking"
+model_name = &quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 bert_mlm = TFBertForMaskedLM.from_pretrained(model_name)
 
-text = "今日は[MASK]へ行く。"
+text = &quot;今日は[MASK]へ行く。&quot;
 tokens = tokenizer.tokenize(text)
 print(tokens)
-# ['今日', 'は', '[MASK]', 'へ', '行く', '。']
+# [&#39;今日&#39;, &#39;は&#39;, &#39;[MASK]&#39;, &#39;へ&#39;, &#39;行く&#39;, &#39;。&#39;]
 
-input_ids = tokenizer.encode(text, return_tensors="tf")
+input_ids = tokenizer.encode(text, return_tensors=&quot;tf&quot;)
 output = bert_mlm(input_ids=input_ids)
 
 # [MASK]位置はid値から特定
-maskid = tokenizer.vocab["[MASK]"]
+maskid = tokenizer.vocab[&quot;[MASK]&quot;]
 index = tf.where(input_ids == maskid)  # Return like [[0 3]]
 r = tf.argmax(output.logits[0, index[0][1]], axis=-1)
 mask = tokenizer.convert_ids_to_tokens([r])
 print(mask)
-print(text.replace("[MASK]", mask[0]))
+print(text.replace(&quot;[MASK]&quot;, mask[0]))
 ---
-['東京']
+[&#39;東京&#39;]
 今日は東京へ行く。
 </pre></div>
 </div>
 </section>
 <section id="id6">
-<h2>文章分類<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>文章分類<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">#</a></h2>
 <p>BertForSequenceClassification</p>
 <p>2値分類を行う</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">transformers</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">TFBertForSequenceClassification</span>
 
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
 <span class="n">bert_sc</span> <span class="o">=</span> <span class="n">TFBertForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span>
-         <span class="s2">"この映画は面白かった"</span><span class="p">,</span>
-         <span class="s2">"この映画の最後にはがっかりさせられた"</span><span class="p">,</span>
-         <span class="s2">"この映画をみて幸せな気持ちになった"</span>
+         <span class="s2">&quot;この映画は面白かった&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;この映画の最後にはがっかりさせられた&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;この映画をみて幸せな気持ちになった&quot;</span>
 <span class="p">]</span>
 <span class="n">label_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">"longest"</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"tf"</span><span class="p">)</span>
+<span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;longest&quot;</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;tf&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">bert_sc</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">bert_sc</span><span class="p">(</span><span class="o">**</span><span class="n">encoding</span><span class="p">)</span>
 <span class="n">output</span>
 <span class="o">---</span>
-<span class="n">dict_keys</span><span class="p">([</span><span class="s1">'input_ids'</span><span class="p">,</span> <span class="s1">'token_type_ids'</span><span class="p">,</span> <span class="s1">'attention_mask'</span><span class="p">])</span>
-<span class="n">Model</span><span class="p">:</span> <span class="s2">"tf_bert_for_sequence_classification_1"</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;input_ids&#39;</span><span class="p">,</span> <span class="s1">&#39;token_type_ids&#39;</span><span class="p">,</span> <span class="s1">&#39;attention_mask&#39;</span><span class="p">])</span>
+<span class="n">Model</span><span class="p">:</span> <span class="s2">&quot;tf_bert_for_sequence_classification_1&quot;</span>
 <span class="n">_________________________________________________________________</span>
  <span class="n">Layer</span> <span class="p">(</span><span class="nb">type</span><span class="p">)</span>                <span class="n">Output</span> <span class="n">Shape</span>              <span class="n">Param</span> <span class="c1">#   </span>
 <span class="o">=================================================================</span>
@@ -423,7 +426,7 @@ print(text.replace("[MASK]", mask[0]))
 <span class="n">Trainable</span> <span class="n">params</span><span class="p">:</span> <span class="mi">110</span><span class="p">,</span><span class="mi">618</span><span class="p">,</span><span class="mi">882</span>
 <span class="n">Non</span><span class="o">-</span><span class="n">trainable</span> <span class="n">params</span><span class="p">:</span> <span class="mi">0</span>
 <span class="n">_________________________________________________________________</span>
-<span class="n">TFSequenceClassifierOutput</span><span class="p">([(</span><span class="s1">'logits'</span><span class="p">,</span>
+<span class="n">TFSequenceClassifierOutput</span><span class="p">([(</span><span class="s1">&#39;logits&#39;</span><span class="p">,</span>
                              <span class="o">&lt;</span><span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span>
                              <span class="n">array</span><span class="p">([[</span> <span class="mf">0.3863358</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.05458079</span><span class="p">],</span>
                                     <span class="p">[</span> <span class="mf">0.3874793</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.20349072</span><span class="p">],</span>
@@ -431,7 +434,7 @@ print(text.replace("[MASK]", mask[0]))
 </pre></div>
 </div>
 <section id="id7">
-<h3>サンプルコード<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>サンプルコード<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">#</a></h3>
 <p>bertのモデルには<code class="docutils literal notranslate"><span class="pre">input_ids</span></code>, <code class="docutils literal notranslate"><span class="pre">attention_mask</span></code>, <code class="docutils literal notranslate"><span class="pre">token_type_ids</span></code>の3つが必要になるので
 datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <p>livedoorの記事を使用</p>
@@ -448,78 +451,78 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">TFBertForSequenceClassification</span>
 
 <span class="c1"># Tokenizer作成</span>
-<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
 
 <span class="c1"># token最大長</span>
 <span class="n">max_length</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">category_list</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="s2">"dokujo-tsushin"</span><span class="p">,</span>
-  <span class="s2">"it-life-hack"</span><span class="p">,</span> 
-  <span class="s2">"kaden-channel"</span><span class="p">,</span>
-  <span class="s2">"livedoor-homme"</span><span class="p">,</span>
-  <span class="s2">"movie-enter"</span>
-  <span class="s2">"peachy"</span><span class="p">,</span>
-  <span class="s2">"smax"</span><span class="p">,</span>
-  <span class="s2">"sports-watch"</span><span class="p">,</span>
-  <span class="s2">"topic-news"</span>
+  <span class="s2">&quot;dokujo-tsushin&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;it-life-hack&quot;</span><span class="p">,</span> 
+  <span class="s2">&quot;kaden-channel&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;livedoor-homme&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;movie-enter&quot;</span>
+  <span class="s2">&quot;peachy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;smax&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;sports-watch&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;topic-news&quot;</span>
 <span class="p">]</span>
 <span class="n">num_labels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">category_list</span><span class="p">)</span>
 
 <span class="c1"># ファイルの読み込みと、tokenizerによるベクトル化</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"text"</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">"label"</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="p">[]}</span>
 <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">category_list</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"text/</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">*"</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;text/</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">*&quot;</span><span class="p">):</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
-    <span class="n">dataset</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">dataset</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
 
-<span class="n">dataset_tokens</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">"text"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
-    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">"max_length"</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dataset_tokens</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1"># 訓練用と検証用に分割</span>
 <span class="n">x_train</span><span class="p">,</span> <span class="n">x_valid</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">dataset_tokens</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">"label"</span><span class="p">],</span> 
-    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span>
+    <span class="n">dataset_tokens</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">],</span> 
+    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])</span>
 
 
 <span class="c1"># データ設置を作成</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"train"</span><span class="p">:</span> <span class="p">(</span>
+    <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="p">(</span>
        <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span>
         <span class="p">{</span>
-         <span class="s2">"input_ids"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">],</span>
-          <span class="s2">"attention_mask"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"attention_mask"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">],</span>
-          <span class="s2">"token_type_ids"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"token_type_ids"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">]</span>
+         <span class="s2">&quot;input_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">],</span>
+          <span class="s2">&quot;attention_mask&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">],</span>
+          <span class="s2">&quot;token_type_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">]</span>
         <span class="p">},</span>
         <span class="n">y_train</span>
       <span class="p">))</span>
     <span class="p">),</span>
-    <span class="s2">"validation"</span><span class="p">:</span> <span class="p">(</span>
+    <span class="s2">&quot;validation&quot;</span><span class="p">:</span> <span class="p">(</span>
        <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span>
         <span class="p">{</span>
-         <span class="s2">"input_ids"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">],</span>
-          <span class="s2">"attention_mask"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"attention_mask"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">],</span>
-          <span class="s2">"token_type_ids"</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">"token_type_ids"</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">]</span>
+         <span class="s2">&quot;input_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">],</span>
+          <span class="s2">&quot;attention_mask&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">],</span>
+          <span class="s2">&quot;token_type_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_valid</span><span class="p">]</span>
         <span class="p">},</span>
         <span class="n">y_valid</span>
       <span class="p">))</span>
     <span class="p">)</span>
 <span class="p">}</span>
-<span class="n">train_ds</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"train"</span><span class="p">]</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
-<span class="n">valid_ds</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"validation"</span><span class="p">]</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">valid_ds</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;validation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
 
 <span class="c1"># モデルの作成</span>
 <span class="k">def</span> <span class="nf">make_model</span><span class="p">(</span><span class="n">bert</span><span class="p">,</span> <span class="n">bert_frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 
   <span class="n">bert</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">True</span>
   <span class="c1"># input</span>
-  <span class="n">input_ids</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"input_ids"</span><span class="p">)</span>
-  <span class="n">attention_mask</span>  <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"attention_mask"</span><span class="p">)</span>
-  <span class="n">token_type_ids</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"token_type_ids"</span><span class="p">)</span>
+  <span class="n">input_ids</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;input_ids&quot;</span><span class="p">)</span>
+  <span class="n">attention_mask</span>  <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">)</span>
+  <span class="n">token_type_ids</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">)</span>
   <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="p">,</span> <span class="n">token_type_ids</span><span class="p">]</span>
 
   <span class="c1"># bert</span>
@@ -528,9 +531,9 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
   <span class="c1"># only use pooled_output</span>
   <span class="n">out</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">pooler_output</span>
   <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
-  <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">"relu"</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
   <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
-  <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">num_labels</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">"softmax"</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">num_labels</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;softmax&quot;</span><span class="p">)(</span><span class="n">out</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
 
 <span class="n">bert</span> <span class="o">=</span> <span class="n">TFBertForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="n">num_labels</span><span class="p">)</span>
@@ -548,7 +551,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 </section>
 </section>
 <section id="id8">
-<h2>多値分類<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>多値分類<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">#</a></h2>
 <p>BertModelでone-hot encodingのデータを使用して多値分類を行う</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BertForSequenceClassificationMultiLabel</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_labels</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -573,9 +576,9 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <span class="k">def</span> <span class="nf">make_model</span><span class="p">():</span>
 
   <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"input_ids"</span><span class="p">),</span>
-    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"token_type_ids"</span><span class="p">),</span>
-    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"attention_mask"</span><span class="p">)</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;input_ids&quot;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">)</span>
   <span class="p">]</span>
   <span class="n">bert</span> <span class="o">=</span> <span class="n">BertForSequenceClassificationMultiLabel</span><span class="p">(</span><span class="n">num_labels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
   <span class="n">out</span> <span class="o">=</span> <span class="n">bert</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
@@ -597,12 +600,12 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
                                                                                                   
  <span class="n">attention_mask</span> <span class="p">(</span><span class="n">InputLayer</span><span class="p">)</span>    <span class="p">[(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">128</span><span class="p">)]</span>        <span class="mi">0</span>           <span class="p">[]</span>                               
                                                                                                   
- <span class="n">bert_for_sequence_classificati</span>  <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>         <span class="mi">110617344</span>   <span class="p">[</span><span class="s1">'input_ids[0][0]'</span><span class="p">,</span>              
- <span class="n">on_multi_label_23</span> <span class="p">(</span><span class="n">BertForSequ</span>                                   <span class="s1">'token_type_ids[0][0]'</span><span class="p">,</span>         
- <span class="n">enceClassificationMultiLabel</span><span class="p">)</span>                                    <span class="s1">'attention_mask[0][0]'</span><span class="p">]</span>         
+ <span class="n">bert_for_sequence_classificati</span>  <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span>         <span class="mi">110617344</span>   <span class="p">[</span><span class="s1">&#39;input_ids[0][0]&#39;</span><span class="p">,</span>              
+ <span class="n">on_multi_label_23</span> <span class="p">(</span><span class="n">BertForSequ</span>                                   <span class="s1">&#39;token_type_ids[0][0]&#39;</span><span class="p">,</span>         
+ <span class="n">enceClassificationMultiLabel</span><span class="p">)</span>                                    <span class="s1">&#39;attention_mask[0][0]&#39;</span><span class="p">]</span>         
                                                                                                   
- <span class="n">dense_35</span> <span class="p">(</span><span class="n">Dense</span><span class="p">)</span>               <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>            <span class="mi">2307</span>        <span class="p">[</span><span class="s1">'bert_for_sequence_classificatio</span>
-                                                                 <span class="n">n_multi_label_23</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="s1">']         </span>
+ <span class="n">dense_35</span> <span class="p">(</span><span class="n">Dense</span><span class="p">)</span>               <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>            <span class="mi">2307</span>        <span class="p">[</span><span class="s1">&#39;bert_for_sequence_classificatio</span>
+                                                                 <span class="n">n_multi_label_23</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="s1">&#39;]         </span>
                                                                                                   
 <span class="o">==================================================================================================</span>
 <span class="n">Total</span> <span class="n">params</span><span class="p">:</span> <span class="mi">110</span><span class="p">,</span><span class="mi">619</span><span class="p">,</span><span class="mi">651</span>
@@ -611,15 +614,15 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 </pre></div>
 </div>
 <section id="id9">
-<h3>形態素解析<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>形態素解析<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">#</a></h3>
 <p>文章を形態素に分割して品詞などを判別する</p>
 <p>例文: しょうゆを１本買いました</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sudachipy</span> <span class="kn">import</span> <span class="n">tokenizer</span>
 <span class="kn">from</span> <span class="nn">sudachipy</span> <span class="kn">import</span> <span class="n">dictionary</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s2">"しょうゆを１本買いました"</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;しょうゆを１本買いました&quot;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">"core"</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="n">t</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="o">---</span>
 <span class="o">&lt;</span><span class="n">MorphemeList</span><span class="p">[</span>
@@ -634,9 +637,9 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 </pre></div>
 </div>
 <p>各形態素の参照方法</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">"しょうゆを１本買いました"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;しょうゆを１本買いました&quot;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">"core"</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="n">mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">C</span>
 
 <span class="n">tokens</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
@@ -654,15 +657,15 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 </pre></div>
 </div>
 <p>sudachiの正規化は以下のようになる</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">"しょうゆを１本買いました"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;しょうゆを１本買いました&quot;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">"core"</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="n">mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">C</span>
 
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">):</span>
   <span class="n">origin</span> <span class="o">=</span> <span class="n">t</span>
   <span class="n">normalized</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">normalized_form</span><span class="p">()</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span><span class="s2">" -&gt; "</span><span class="p">,</span>  <span class="n">normalized</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span>  <span class="n">normalized</span><span class="p">)</span>
 
 <span class="o">---</span>
 <span class="n">しょうゆ</span>  <span class="o">-&gt;</span>  <span class="n">醤油</span>
@@ -677,28 +680,28 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <p>SplitModeの違いは以下</p>
 <p>https://github.com/WorksApplications/SudachiPy</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">C</span>
-<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">"国家公務員"</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
-<span class="c1"># =&gt; ['国家公務員']</span>
+<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">&quot;国家公務員&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
+<span class="c1"># =&gt; [&#39;国家公務員&#39;]</span>
 
 <span class="n">mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">B</span>
-<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">"国家公務員"</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
-<span class="c1"># =&gt; ['国家', '公務員']</span>
+<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">&quot;国家公務員&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
+<span class="c1"># =&gt; [&#39;国家&#39;, &#39;公務員&#39;]</span>
 
 <span class="n">mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">A</span>
-<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">"国家公務員"</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
-<span class="c1"># =&gt; ['国家', '公務', '員']</span>
+<span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenizer_obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s2">&quot;国家公務員&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
+<span class="c1"># =&gt; [&#39;国家&#39;, &#39;公務&#39;, &#39;員&#39;]</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="id10">
-<h2>固有表現抽出<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>固有表現抽出<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">#</a></h2>
 <p>文章から固有値を抽出する</p>
 <p>固有値の表現方法</p>
 <p>例文: AさんはBCD株式会社を起業した</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"span"</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"人名"</span><span class="p">,</span> <span class="s2">"type_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-  <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"BCD株式会社"</span><span class="p">,</span> <span class="s2">"span"</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"組織名"</span><span class="p">,</span> <span class="s2">"type_id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;人名&quot;</span><span class="p">,</span> <span class="s2">&quot;type_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;BCD株式会社&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;組織名&quot;</span><span class="p">,</span> <span class="s2">&quot;type_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -713,7 +716,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <p>例文: AさんはBCD株式会社を起業した</p>
 <ol class="arabic">
 <li><p>単語単位で分割(形態素解析)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokens</span>   <span class="o">=</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"さん"</span><span class="p">,</span> <span class="s2">"は"</span><span class="p">,</span> <span class="s2">"BCD"</span><span class="p">,</span> <span class="s2">"株式"</span><span class="p">,</span> <span class="s2">"会社"</span><span class="p">,</span> <span class="s2">"を"</span><span class="p">,</span> <span class="s2">"起業"</span><span class="p">,</span> <span class="s2">"し"</span><span class="p">,</span> <span class="s2">"た"</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tokens</span>   <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;さん&quot;</span><span class="p">,</span> <span class="s2">&quot;は&quot;</span><span class="p">,</span> <span class="s2">&quot;BCD&quot;</span><span class="p">,</span> <span class="s2">&quot;株式&quot;</span><span class="p">,</span> <span class="s2">&quot;会社&quot;</span><span class="p">,</span> <span class="s2">&quot;を&quot;</span><span class="p">,</span> <span class="s2">&quot;起業&quot;</span><span class="p">,</span> <span class="s2">&quot;し&quot;</span><span class="p">,</span> <span class="s2">&quot;た&quot;</span><span class="p">]</span>
 <span class="n">type_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>     <span class="mi">0</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>     <span class="mi">2</span><span class="p">,</span>       <span class="mi">2</span><span class="p">,</span>     <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>      <span class="mi">0</span><span class="p">,</span>    <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -732,8 +735,8 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <span class="k">class</span> <span class="nc">Tokenizer</span><span class="p">():</span>
 
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">model_name</span> <span class="o">=</span> <span class="s2">"cl-tohoku/bert-base-japanese-whole-word-masking"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer_obj</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">"core"</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+    <span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;cl-tohoku/bert-base-japanese-whole-word-masking&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer_obj</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="nb">dict</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">tokenizer_mode</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">Tokenizer</span><span class="o">.</span><span class="n">SplitMode</span><span class="o">.</span><span class="n">A</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">bert_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
   
@@ -750,10 +753,10 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
     <span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="n">entities</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"span"</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">entities</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;span&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">entities</span><span class="p">:</span>
-      <span class="n">start</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">"span"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-      <span class="n">end</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">"span"</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">start</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;span&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">end</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;span&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
       <span class="n">token</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">start</span><span class="p">]</span>
       <span class="n">entity_token</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
       
@@ -761,7 +764,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
       <span class="n">txt_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">txt_tokens</span><span class="p">)</span>
 
       <span class="n">ent_tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">entity_token</span><span class="p">)</span>
-      <span class="n">ent_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">"type_id"</span><span class="p">]]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">ent_tokens</span><span class="p">)</span>
+      <span class="n">ent_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;type_id&quot;</span><span class="p">]]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">ent_tokens</span><span class="p">)</span>
 
       <span class="n">tokens</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">txt_tokens</span><span class="p">)</span>
       <span class="n">tokens</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ent_tokens</span><span class="p">)</span>
@@ -771,7 +774,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
       <span class="n">pos</span> <span class="o">=</span> <span class="n">end</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="n">txt_tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">entities</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">"span"</span><span class="p">][</span><span class="mi">1</span><span class="p">]:])</span>
+      <span class="n">txt_tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">entities</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;span&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]:])</span>
       <span class="n">txt_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">txt_tokens</span><span class="p">)</span>
       <span class="n">tokens</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">txt_tokens</span><span class="p">)</span>
       <span class="n">labels</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">txt_labels</span><span class="p">)</span>
@@ -786,16 +789,16 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
     <span class="n">input_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bert_tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
     <span class="n">encodes</span> <span class="o">=</span> <span class="n">bert_tokenizer</span><span class="o">.</span><span class="n">prepare_for_model</span><span class="p">(</span>
         <span class="n">input_ids</span><span class="p">,</span>
-        <span class="n">padding</span><span class="o">=</span><span class="s2">"max_length"</span><span class="p">,</span> 
+        <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;max_length&quot;</span><span class="p">,</span> 
         <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> 
         <span class="n">trucation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"tf"</span>
+        <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;tf&quot;</span>
     <span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"truncated: "</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]))</span>
-      <span class="n">encodes</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
-      <span class="n">encodes</span><span class="p">[</span><span class="s2">"attention_mask"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">"attention_mask"</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
-      <span class="n">encodes</span><span class="p">[</span><span class="s2">"token_type_ids"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">"token_type_ids"</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;truncated: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]))</span>
+      <span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
+      <span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;attention_mask&quot;</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
+      <span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ragged</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">encodes</span><span class="p">[</span><span class="s2">&quot;token_type_ids&quot;</span><span class="p">][:</span><span class="n">max_length</span><span class="p">])</span>
 
     <span class="c1"># [CLS] [SEP] [PAD]のラベルは0に設定する</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">labels</span>
@@ -807,30 +810,30 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <ul class="simple">
 <li><p>単語単位で分割</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">"AさんはBCD株式会社を起業しました。"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;AさんはBCD株式会社を起業しました。&quot;</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 <span class="o">---</span>
-<span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'さん'</span><span class="p">,</span> <span class="s1">'は'</span><span class="p">,</span> <span class="s1">'BCD'</span><span class="p">,</span> <span class="s1">'株式'</span><span class="p">,</span> <span class="s1">'会社'</span><span class="p">,</span> <span class="s1">'を'</span><span class="p">,</span> <span class="s1">'起業'</span><span class="p">,</span> <span class="s1">'し'</span><span class="p">,</span> <span class="s1">'まし'</span><span class="p">,</span> <span class="s1">'た'</span><span class="p">,</span> <span class="s1">'。'</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;さん&#39;</span><span class="p">,</span> <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;BCD&#39;</span><span class="p">,</span> <span class="s1">&#39;株式&#39;</span><span class="p">,</span> <span class="s1">&#39;会社&#39;</span><span class="p">,</span> <span class="s1">&#39;を&#39;</span><span class="p">,</span> <span class="s1">&#39;起業&#39;</span><span class="p">,</span> <span class="s1">&#39;し&#39;</span><span class="p">,</span> <span class="s1">&#39;まし&#39;</span><span class="p">,</span> <span class="s1">&#39;た&#39;</span><span class="p">,</span> <span class="s1">&#39;。&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Entityをもとにlabelを作成</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">type_ids</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="mi">1</span><span class="p">:</span> <span class="s2">"人物"</span><span class="p">,</span>
-    <span class="mi">2</span><span class="p">:</span> <span class="s2">"企業名"</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;人物&quot;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;企業名&quot;</span>
 <span class="p">}</span>
 <span class="n">entities</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"span"</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">"type_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-  <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"BCD株式会社"</span><span class="p">,</span> <span class="s2">"span"</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s2">"type_id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;type_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;BCD株式会社&quot;</span><span class="p">,</span> <span class="s2">&quot;span&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="s2">&quot;type_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="p">]</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>
 <span class="n">tokens</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">tokenize_with_labels</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">entities</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 <span class="o">---</span>
-<span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'さん'</span><span class="p">,</span> <span class="s1">'は'</span><span class="p">,</span> <span class="s1">'BCD'</span><span class="p">,</span> <span class="s1">'株式'</span><span class="p">,</span> <span class="s1">'会社'</span><span class="p">,</span> <span class="s1">'を'</span><span class="p">,</span> <span class="s1">'起業'</span><span class="p">,</span> <span class="s1">'し'</span><span class="p">,</span> <span class="s1">'まし'</span><span class="p">,</span> <span class="s1">'た'</span><span class="p">,</span> <span class="s1">'。'</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;さん&#39;</span><span class="p">,</span> <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;BCD&#39;</span><span class="p">,</span> <span class="s1">&#39;株式&#39;</span><span class="p">,</span> <span class="s1">&#39;会社&#39;</span><span class="p">,</span> <span class="s1">&#39;を&#39;</span><span class="p">,</span> <span class="s1">&#39;起業&#39;</span><span class="p">,</span> <span class="s1">&#39;し&#39;</span><span class="p">,</span> <span class="s1">&#39;まし&#39;</span><span class="p">,</span> <span class="s1">&#39;た&#39;</span><span class="p">,</span> <span class="s1">&#39;。&#39;</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -841,7 +844,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">encoded_tokens</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">encoded_labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
 <span class="o">---</span>
-<span class="n">dict_keys</span><span class="p">([</span><span class="s1">'input_ids'</span><span class="p">,</span> <span class="s1">'token_type_ids'</span><span class="p">,</span> <span class="s1">'attention_mask'</span><span class="p">])</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;input_ids&#39;</span><span class="p">,</span> <span class="s1">&#39;token_type_ids&#39;</span><span class="p">,</span> <span class="s1">&#39;attention_mask&#39;</span><span class="p">])</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -853,8 +856,26 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="autoencoder.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">オートエンコーダ</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="tensorflow.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Tensorflow model</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -881,7 +902,7 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            コンテンツ
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -921,7 +942,9 @@ datasetの作成とモデルの作成にひと工夫ひつよう</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/translations.js"></script>
     </body>

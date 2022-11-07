@@ -2,14 +2,14 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="scikit-learn" href="scikit_learn.html" /><link rel="prev" title="Plot" href="plot.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
         <title>Tensorflow dataset - mlnote 0 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -36,10 +36,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -166,17 +168,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../preprocess/index.html">Preprocessing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../models/index.html">model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../models/scikit_learn.html">Scikit Learn Models</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../models/tensorflow.html">Tensorflow model</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html">オートエンコーダ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../models/tf/autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html">敵対的生成ネットワーク</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../models/tf/gan.html#gan">深層畳み込みGAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/tensorflow.html">Tensorflow model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/bert.html">BERT Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/autoencoder.html">オートエンコーダ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/autoencoder.html#vae">変分オートエンコーダ(VAE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/gan.html">敵対的生成ネットワーク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/tf/gan.html#gan">深層畳み込みGAN</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../models/bert.html">BERT Model</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Training</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../training/scikit_learn.html">scikit-learn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../training/tensorflow.html">Tensorflow</a></li>
 </ul>
@@ -199,7 +199,9 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -214,9 +216,9 @@
         </div>
         <article role="main">
           <section id="tensorflow-dataset">
-<h1>Tensorflow dataset<a class="headerlink" href="#tensorflow-dataset" title="このヘッドラインへのパーマリンク">#</a></h1>
+<h1>Tensorflow dataset<a class="headerlink" href="#tensorflow-dataset" title="この見出しへのパーマリンク">#</a></h1>
 <section id="dataset">
-<h2>Datasetの作成<a class="headerlink" href="#dataset" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>Datasetの作成<a class="headerlink" href="#dataset" title="この見出しへのパーマリンク">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
@@ -224,7 +226,7 @@
 </div>
 </section>
 <section id="batch-repeat-shuffle">
-<h2>batch, repeat, shuffle<a class="headerlink" href="#batch-repeat-shuffle" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>batch, repeat, shuffle<a class="headerlink" href="#batch-repeat-shuffle" title="この見出しへのパーマリンク">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -269,10 +271,10 @@
 </div>
 </section>
 <section id="dataset-method">
-<h2>よく使われるdataset method<a class="headerlink" href="#dataset-method" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>よく使われるdataset method<a class="headerlink" href="#dataset-method" title="この見出しへのパーマリンク">#</a></h2>
 <p>https://www.tensorflow.org/api_docs/python/tf/data/Dataset</p>
 <section id="map">
-<h3>map<a class="headerlink" href="#map" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>map<a class="headerlink" href="#map" title="この見出しへのパーマリンク">#</a></h3>
 <p>個々のデータに対して何らかの処理を行う</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
@@ -294,7 +296,7 @@
 </div>
 </section>
 <section id="concatenate">
-<h3>concatenate<a class="headerlink" href="#concatenate" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>concatenate<a class="headerlink" href="#concatenate" title="この見出しへのパーマリンク">#</a></h3>
 <p>結合する</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># ==&gt; [ 1, 2, 3 ]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>  <span class="c1"># ==&gt; [ 4, 5, 6, 7 ]</span>
@@ -306,7 +308,7 @@
 </div>
 </section>
 <section id="zip">
-<h3>zip<a class="headerlink" href="#zip" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>zip<a class="headerlink" href="#zip" title="この見出しへのパーマリンク">#</a></h3>
 <p>pythonのzipと同じイメージ</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># ==&gt; [ 1, 2, 3 ]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># ==&gt; [ 4, 5, 6 ]</span>
@@ -318,7 +320,7 @@
 </div>
 </section>
 <section id="window">
-<h3>window<a class="headerlink" href="#window" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>window<a class="headerlink" href="#window" title="この見出しへのパーマリンク">#</a></h3>
 <p>datasetをサブセットで分ける</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">window</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
@@ -338,7 +340,7 @@
 </section>
 </section>
 <section id="id1">
-<h2>データセットの数を取得する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>データセットの数を取得する<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">#</a></h2>
 <p>訓練時のepochごとのstep数を計算するのに使う</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
 <span class="n">steps_per_epoch</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">cardinality</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
@@ -354,9 +356,9 @@
 </div>
 </section>
 <section id="csv">
-<h2>CSVのパース<a class="headerlink" href="#csv" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>CSVのパース<a class="headerlink" href="#csv" title="この見出しへのパーマリンク">#</a></h2>
 <p>tf.io.decode_csvで欠損値などを補いながら読み込める。defsは欠損値に対するdefault値</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s2">"5,1,20.9,2,"</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;5,1,20.9,2,&quot;</span>
 <span class="n">defs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([</span><span class="mi">99</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)]</span>
 <span class="n">fields</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">decode_csv</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">record_defaults</span><span class="o">=</span><span class="n">defs</span><span class="p">)</span>
 <span class="n">fields</span>
@@ -386,12 +388,12 @@
 </div>
 </section>
 <section id="id2">
-<h2>Datasetリソース例<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>Datasetリソース例<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">#</a></h2>
 <section id="id3">
-<h3>ファイル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>ファイル<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">#</a></h3>
 <p>例:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data01</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/01.csv"</span><span class="p">)</span>
-<span class="n">data02</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/02.csv"</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data01</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/01.csv&quot;</span><span class="p">)</span>
+<span class="n">data02</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/02.csv&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data01</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data02</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="o">---</span>
@@ -404,14 +406,14 @@
 <span class="mi">1</span>           <span class="mi">1</span>   <span class="mi">5</span>  <span class="n">Goro</span>    <span class="mi">6</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filepaths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"data/01.csv"</span><span class="p">,</span> <span class="s2">"data/02.csv"</span><span class="p">]</span>
-<span class="c1">#filepaths = ["data/*.csv"]  &lt;- こっちでも可</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filepaths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data/01.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;data/02.csv&quot;</span><span class="p">]</span>
+<span class="c1">#filepaths = [&quot;data/*.csv&quot;]  &lt;- こっちでも可</span>
 <span class="n">filepath_dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">list_files</span><span class="p">(</span><span class="n">filepaths</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filepath_dataset</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="o">---</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'data/01.csv'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'data/02.csv'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;data/01.csv&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;data/02.csv&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>複数のファイル(テキスト)をシーケンシャルに読むのではなく、インターリーブで読む場合、interleave()を使用する</p>
@@ -423,16 +425,16 @@
 <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="o">---</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'0,4,Siro,7'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'0,1,Taro,10'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'1,5,Goro,6'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'1,2,Jiro,9'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">'2,3,Saburo,8'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;0,4,Siro,7&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;0,1,Taro,10&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;1,5,Goro,6&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;1,2,Jiro,9&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;2,3,Saburo,8&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">string</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="dataset-pipeline">
-<h3>Dataset Pipeline例<a class="headerlink" href="#dataset-pipeline" title="このヘッドラインへのパーマリンク">#</a></h3>
+<h3>Dataset Pipeline例<a class="headerlink" href="#dataset-pipeline" title="この見出しへのパーマリンク">#</a></h3>
 <p>datasetにはprefetch(1)を用いることで先読みによる効率化が期待できる。1あれば基本は十分事足りる</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">csv_line</span><span class="p">):</span>
   <span class="n">defs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
@@ -455,7 +457,7 @@
 </pre></div>
 </div>
 <p>使い方</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">csv_reader_dataset</span><span class="p">([</span><span class="s2">"data/*.csv"</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">csv_reader_dataset</span><span class="p">([</span><span class="s2">&quot;data/*.csv&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
@@ -464,29 +466,29 @@
 </section>
 </section>
 <section id="id4">
-<h2>標準のデータセットを使う<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">#</a></h2>
+<h2>標準のデータセットを使う<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">#</a></h2>
 <p>tensorflow側で用意されているデータセットを使用する場合はtfdsを使用する</p>
 <ul class="simple">
 <li><p>例: mnist</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span> 
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"mnist"</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mnist&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">"train"</span><span class="p">]))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="o">---</span>
-<span class="n">dict_keys</span><span class="p">([</span><span class="s1">'image'</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">])</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">])</span>
 <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">32</span><span class="p">,)</span>
 </pre></div>
 </div>
 <p>as_supervised=Trueをつけるとtuplle形式で得られる。このほうがtensorflowで使用するえでは楽</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span> 
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"mnist"</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mnist&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">as_supervised</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">"train"</span><span class="p">]))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="o">---</span>
@@ -518,10 +520,10 @@
                 </div>
                 <div class="title">scikit-learn</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="plot.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -557,7 +559,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            コンテンツ
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -595,7 +597,9 @@
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/translations.js"></script>
     </body>
