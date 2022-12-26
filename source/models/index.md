@@ -9,4 +9,8 @@ tf/tensorflow.md
 tf/bert.md
 tf/autoencoder.md
 tf/gan.md
+pytorch/base.md
+pytorch/fine_tuning.md
+pytorch/transfer_lerning.md
+onnx/index.md
 ```
