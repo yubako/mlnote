@@ -13,4 +13,5 @@ pytorch/base.md
 pytorch/fine_tuning.md
 pytorch/transfer_lerning.md
 onnx/index.md
+yolox/index.md
 ```

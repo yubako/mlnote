@@ -11,4 +11,5 @@ data/index.md
 preprocess/index.md
 models/index.md
 training/index.md
+tracking/index.md
 ```
