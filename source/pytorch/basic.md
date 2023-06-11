@@ -261,3 +261,15 @@ $\beta_1$, $\beta_2$, $\eta$, $\epsilon$が定数。tはパラメータ更新回
 ```
 optimizer = torch.optim.Adam(...)
 ```
+
+
+
+$\mathbf{R_x} = \begin{bmatrix} 1 & 0 & 0 \ 0 & \cos{\alpha} & -\sin{\alpha} \ 0 & \sin{\alpha} & \cos{\alpha} \end{bmatrix}$
+
+
+$\mathbf{R_y} = \begin{bmatrix} \cos{\beta} & 0 & \sin{\beta} \ 0 & 1 & 0 \ -\sin{\beta} & 0 & \cos{\beta} \end{bmatrix}$
+
+$\mathbf{R_z} = \begin{bmatrix} \cos{\gamma} & -\sin{\gamma} & 0 \ \sin{\gamma} & \cos{\gamma} & 0 \ 0 & 0 & 1 \end{bmatrix}$
+
+$\mathbf{R} = \mathbf{R_z} \mathbf{R_y} \mathbf{R_x}$
+
